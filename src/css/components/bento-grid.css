@@ -1,0 +1,45 @@
+/* Bento Grid Component Styles */
+/* This file contains specific styles for the bento grid layout */
+
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual grid items */
+.bento-grid > div {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bento-grid > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid layout variations can be added here */
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+  /* Specific grid item positioning can be added here */
+  /* Example:
+  .bento-grid > div:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  */
+}
